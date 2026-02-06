@@ -1,0 +1,18 @@
+# sentinel_agent/.gitignore
+
+# Secrets & Local Environment
+.env
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE / System
+.vscode/
+.DS_Store
