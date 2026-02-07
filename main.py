@@ -10,11 +10,9 @@ def run_conservation_agent():
     """
     print("Initializing Sentinel Conservation Agent...")
     
-    # Initialize the core components.
     eyes = SentinelClient()
     brain = AnalystAgent()
     
-    # 1. Search for the most recent satellite imagery.
     print(f"Scanning coordinates: {DEFAULT_LAT}, {DEFAULT_LON}")
     image_data = eyes.find_latest_image(DEFAULT_LAT, DEFAULT_LON)
     
@@ -25,7 +23,6 @@ def run_conservation_agent():
     print(f"Image found: Captured on {image_data['date']} "
           f"with {image_data['cloud_cover']}% cloud cover.")
 
-    # 2. Execute AI-driven metadata analysis.
     print("Submitting metadata to the Analyst Agent for evaluation...")
     report = brain.analyse_image_data(
         image_data['date'], 
@@ -34,13 +31,12 @@ def run_conservation_agent():
     )
     
     print(f"\n--- Agent Report ---\n{report}\n")
-
-    # 3. Process the agent's decision.
-    if "accept" in report.lower():
+        
+    if "[ACCEPT]" in report.upper():
         notify_user("Sentinel Agent", f"High-quality image identified for {image_data['date']}")
         print("Action: Desktop notification dispatched.")
     else:
-        print("Action: Image rejected based on quality criteria. Continuing monitoring.")
+        print("Action: Image rejected based on quality criteria.")
 
 if __name__ == "__main__":
     try:
