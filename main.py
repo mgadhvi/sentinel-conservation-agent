@@ -4,6 +4,7 @@ from src.config import DEFAULT_LAT, DEFAULT_LON
 from src.sentinel_client import SentinelClient
 from src.analyst_agent import AnalystAgent
 from src.notifications import notify_user
+from src.visualiser import create_location_map
 
 # Configure logging for professional observability
 logging.basicConfig(
@@ -44,6 +45,8 @@ def run_conservation_agent():
     if "[ACCEPT]" in report.upper():
         notify_user("Sentinel Agent", f"High-quality image identified for {image_data['date']}")
         logging.info("Action: Positive identification. Notification dispatched.")
+        create_location_map(DEFAULT_LAT, DEFAULT_LON, image_data['date'])
+        logging.info("Map generated: Open map.html to view the site.")
     else:
         logging.info("Action: Image rejected based on quality criteria.")
 

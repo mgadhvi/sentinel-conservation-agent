@@ -1,6 +1,14 @@
+# Geospatial Data Retrieval and Visualization
 pystac>=1.12.0
 pystac-client>=0.8.0
 planetary-computer>=1.0.0
+folium>=0.15.0
+
+# AI and LLM Orchestration
 huggingface-hub>=0.20.0
+
+# Environment and Secrets
 python-dotenv>=1.0.0
+
+# Core Utilities
 requests>=2.31.0
