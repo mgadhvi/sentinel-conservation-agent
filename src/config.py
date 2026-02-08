@@ -11,7 +11,7 @@ CLOUD_THRESHOLD = 10.0
 
 # AI Settings
 HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-MODEL_ID = "HuggingFaceH4/zephyr-7b-beta"
+MODEL_ID = "meta-llama/Llama-3.2-3B-Instruct"
 
 if not HF_TOKEN:
     raise ValueError("❌ HUGGINGFACEHUB_API_TOKEN not found in .env file!")
