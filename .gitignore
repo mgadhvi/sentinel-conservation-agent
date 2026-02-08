@@ -16,3 +16,7 @@ __pycache__/
 # IDE / System
 .vscode/
 .DS_Store
+
+# Environment
+venv/
+.pytest_cache/

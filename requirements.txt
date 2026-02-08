@@ -1,5 +1,6 @@
-.env
-venv/
-__pycache__/
-*.pyc
-.vscode/
+pystac>=1.12.0
+pystac-client>=0.8.0
+planetary-computer>=1.0.0
+huggingface-hub>=0.20.0
+python-dotenv>=1.0.0
+requests>=2.31.0
